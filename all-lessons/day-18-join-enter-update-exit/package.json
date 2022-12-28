@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-18-join-enter-update-exit",
+  "main": "12e64bf0916f6b89@423.js",
+  "version": "423.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-18-join-enter-update-exit",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

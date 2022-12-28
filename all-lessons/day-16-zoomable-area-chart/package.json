@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-16-zoomable-area-chart",
+  "main": "b9025cdd34bc2d4b@458.js",
+  "version": "458.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-16-zoomable-area-chart",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

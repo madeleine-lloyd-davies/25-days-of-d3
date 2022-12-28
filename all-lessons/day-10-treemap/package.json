@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-10-treemap",
+  "main": "3e6b7fdcd9434fd9@413.js",
+  "version": "413.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-10-treemap",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

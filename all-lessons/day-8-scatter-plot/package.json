@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-8-scatter-plot",
+  "main": "f4de1156e4ad9c7d@347.js",
+  "version": "347.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-8-scatter-plot",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

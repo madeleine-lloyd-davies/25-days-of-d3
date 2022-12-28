@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-4-groups-attributes-and-styles",
+  "main": "a6add2a311e1dce7@257.js",
+  "version": "257.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-4-groups-attributes-and-styles",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

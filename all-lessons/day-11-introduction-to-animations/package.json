@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-11-introduction-to-animations",
+  "main": "ad41ec9e32ce87b7@254.js",
+  "version": "254.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-11-introduction-to-animations",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

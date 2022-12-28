@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-23-force-simulation",
+  "main": "7bba87468c360ec7@341.js",
+  "version": "341.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-23-force-simulation",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

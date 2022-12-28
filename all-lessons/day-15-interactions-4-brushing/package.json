@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-15-interactions-4-brushing",
+  "main": "9f8f0cea6725b7bb@201.js",
+  "version": "201.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-15-interactions-4-brushing",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

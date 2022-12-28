@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-14-interactions-3-dragging",
+  "main": "5a0c08f2de0d497d@163.js",
+  "version": "163.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-14-interactions-3-dragging",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

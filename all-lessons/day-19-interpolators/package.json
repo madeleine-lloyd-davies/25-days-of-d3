@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-19-interpolators",
+  "main": "9648ea1a8e89e661@146.js",
+  "version": "146.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-19-interpolators",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-1-one-shape-many-shapes",
+  "main": "21853bd04219715a@334.js",
+  "version": "334.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-1-one-shape-many-shapes",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

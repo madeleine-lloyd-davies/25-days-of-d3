@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-20-animations-part-2",
+  "main": "760dc20c77e0495c@182.js",
+  "version": "182.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-20-animations-part-2",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

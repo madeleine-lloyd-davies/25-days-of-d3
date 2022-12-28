@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-6-donut-chart",
+  "main": "3f4fb512407837b1@295.js",
+  "version": "295.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-6-donut-chart",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

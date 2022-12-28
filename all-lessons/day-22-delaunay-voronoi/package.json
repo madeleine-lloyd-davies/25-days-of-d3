@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-22-delaunay-voronoi",
+  "main": "3d21a246225a4285@286.js",
+  "version": "286.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-22-delaunay-voronoi",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

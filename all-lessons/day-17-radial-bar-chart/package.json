@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-17-radial-bar-chart",
+  "main": "3ed2afb6b71e9cfa@459.js",
+  "version": "459.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-17-radial-bar-chart",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

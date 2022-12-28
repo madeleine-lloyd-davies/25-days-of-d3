@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25 Days of D3</title>
+    <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="index.js" defer></script>
+  </head>
+  <body>
+    <h1>Howdy, and Welcome.</h1>
+    <h2>Day 1</h2>
+    <svg
+      id="day-1-svg-1"
+      height="40"
+      width="40"
+      style="border: 1px solid #ccc"
+    ></svg>
+    <svg
+      id="day-1-svg-2"
+      height="40"
+      width="160"
+      style="border: 1px solid #ccc"
+    ></svg>
+    <h2>Day 2</h2>
+    <div>
+      <input type="range" id="yslider" name="yslider" min="0" max="140" />
+      <label for="yslider">Adjust the Y Value</label>
+    </div>
+    <div>
+      <input type="range" id="xslider" name="xslider" min="0" max="4" />
+      <label for="xslider">Adjust the X Value</label>
+    </div>
+    <div>
+      <input
+        type="range"
+        id="colorslider"
+        name="colorslider"
+        min="0"
+        max="100"
+      />
+      <label for="colorslider">Adjust the Color</label>
+    </div>
+    <svg
+      id="day-2-svg-1"
+      width="160"
+      height="160"
+      style="border: 1px solid #ccc"
+    ></svg>
+    <div>
+      <svg
+        id="day-2-svg-2"
+        width="160"
+        height="160"
+        style="border: 1px solid #ccc"
+      ></svg>
+    </div>
+  </body>
+</html>

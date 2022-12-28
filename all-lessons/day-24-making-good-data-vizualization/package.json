@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-24-making-good-data-vizualization",
+  "main": "6b879217955c8867@105.js",
+  "version": "105.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-24-making-good-data-vizualization",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

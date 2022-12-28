@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-7-a-line-chart",
+  "main": "da1dba94adb81b1c@283.js",
+  "version": "283.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-7-a-line-chart",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

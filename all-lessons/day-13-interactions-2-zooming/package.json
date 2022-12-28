@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-13-interactions-2-zooming",
+  "main": "4ea9f2a9492a3e75@143.js",
+  "version": "143.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-13-interactions-2-zooming",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

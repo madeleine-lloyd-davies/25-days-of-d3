@@ -1,0 +1,14 @@
+{
+  "name": "@thetylerwolf/day-2-scales-shapes-and-colors",
+  "main": "c51076498a4808c0@175.js",
+  "version": "175.0.0",
+  "homepage": "https://observablehq.com/@thetylerwolf/day-2-scales-shapes-and-colors",
+  "author": {
+    "name": "Tyler Wolf",
+    "url": "https://observablehq.com/@thetylerwolf"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
