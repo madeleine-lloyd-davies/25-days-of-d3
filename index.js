@@ -1,4 +1,3 @@
-// import * as d3 from 'd3';
 function day1shape1() {
   const svgday1 = d3.select('#day-1-svg-1');
   const rect = svgday1.append('rect');
@@ -11,7 +10,6 @@ function day1shape1() {
   return svgday1;
 }
 day1shape1();
-//sample rect, very basic
 
 function day1shape2() {
   const svg = d3.select('#day-1-svg-2');
@@ -186,3 +184,46 @@ function day3() {
   return svg;
 }
 day3();
+
+function day4pt1() {
+  const svg = d3.select('#day-4-1');
+
+  const data = [
+    { name: 'Group 1', value: 1 },
+    { name: 'Group 2', value: 2 },
+    { name: 'Group 3', value: 3 },
+  ];
+
+  const fib = [0, 1, 2, 3, 5, 8];
+
+  const groups = svg
+    .selectAll('g')
+    .data(data)
+    .join('g')
+    // translate each group to the right based on its index
+    .attr('transform', (d, i) => 'translate(' + 100 * i + ',0)');
+
+  groups
+    .selectAll('rect')
+    .data(fib)
+    .join('rect')
+    .attr('x', 10)
+    .attr('y', 30)
+    .attr('width', (d) => d * 10)
+    .attr('height', (d) => d * 10)
+    .style('fill', 'transparent')
+    .style('stroke', '#ff7b57')
+    .style('stroke-width', 2);
+
+  groups
+    .append('text')
+    .attr('x', 10)
+    .attr('y', 20)
+    .attr('dy', '0.35em')
+    .style('font-family', 'sans-serif')
+    .style('font-size', 12)
+    .text((d) => d.name);
+
+  return svg;
+}
+day4pt1();
