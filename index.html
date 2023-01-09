@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>25 Days of D3</title>
-    <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="index.js" defer></script>
+    <script type="module">
+      import { csv } from 'https://cdn.skypack.dev/d3-fetch@3';
+
+      csv('data/big-mac-raw-index@1.csv');
+    </script>
   </head>
   <body>
     <h1>Howdy, and Welcome.</h1>
@@ -76,7 +81,15 @@
     </div>
     <h2>Day 5</h2>
     <div>
-      <svg id="day5" width="900" height="500"></svg>
+      <svg id="day5" width="450" height="250"></svg>
+    </div>
+    <h2>Day 6</h2>
+    <div>
+      <svg id="day6" width="900" height="500"></svg>
+    </div>
+    <h2>Day 7</h2>
+    <div>
+      <svg id="day7" width="900" height="500"></svg>
     </div>
   </body>
 </html>

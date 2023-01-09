@@ -1,3 +1,5 @@
+// import * as d3 from 'd3';
+
 function day1shape1() {
   const svgday1 = d3.select('#day-1-svg-1');
   const rect = svgday1.append('rect');
@@ -307,3 +309,200 @@ function day5() {
   return container;
 }
 day5();
+
+function day6() {
+  const USData = [
+    { type: 'Poultry', value: 48.9954 },
+    { type: 'Beef', value: 25.9887 },
+    { type: 'Pig', value: 22.9373 },
+    { type: 'Sheep', value: 0.4869 },
+  ];
+  const height = 500;
+  const width = 900;
+  const colors = ['#976393', '#685489', '#43457f', '#ff9b83'];
+  const colorScale = d3.scaleOrdinal(
+    USData.map((d) => d.type),
+    colors
+  );
+
+  const arc = d3
+    .arc()
+    // After some trial-and-error, half (0.5) of the full radius gives a nice appearance
+    // To see a pie chart, just change this to zero
+    .innerRadius((0.5 * height) / 2)
+    // Outer radius is less than the full radius because our labels will sit outside of the donut
+    .outerRadius((0.85 * height) / 2);
+
+  const pie = d3
+    .pie()
+    // An accessor to tell the pie where to find the data values
+    .value((d) => d.value);
+
+  const labelArcs = d3
+    .arc()
+    .innerRadius((0.95 * height) / 2)
+    .outerRadius((0.95 * height) / 2);
+
+  const pieArcs = pie(USData);
+
+  const svg = d3.select('#day6');
+
+  // Append our donut container group
+  svg
+    .append('g')
+    .attr('class', 'donut-container')
+
+    // The donut arcs will be centered around this point
+    .attr('transform', `translate(${width / 2},${height / 2})`)
+    .selectAll('path')
+
+    // Our data is the arcs, rather than the data object
+    // so that we have access to the arc data for rendering the paths
+    .data(pieArcs)
+    .join('path')
+    .style('stroke', 'white')
+    .style('stroke-width', 2)
+    .style('fill', (d) => colorScale(d.data.type))
+    // here we pass the arc generator. Remember, an accessor function
+    // receives the data (d) as the first argument, so rather than doing (d) => arc(d)
+    // we can just pass it like below. In this case, our data is the arc descriptor object
+    // so the d attribute will be set to the arc's path string. Take a minute to let that sink in
+    .attr('d', arc);
+
+  // The labels container will need the same setup because it uses an arc, as well
+  const text = svg
+    .append('g')
+    .attr('class', 'labels-container')
+    .attr('transform', `translate(${width / 2},${height / 2})`)
+    .selectAll('text')
+    // We use the data arcs so we have access to the label data
+    .data(pieArcs)
+    .join('text')
+    // We use the label arcs here to get their centroid
+    // a centroid is the center point of a shape (in this case the arc)
+    // remember that our label arc has the same inner and outer radius
+    // so the arc is centered just outside the radius of our donut.
+    // Refer back to the labelArcs setup and think about that for a minute!
+    .attr('transform', (d) => `translate(${labelArcs.centroid(d)})`)
+    .attr('text-anchor', 'middle');
+
+  // This section explained below
+  text
+    .selectAll('tspan')
+    // 1
+    .data((d) => [d.data.type, d.data.value.toFixed(1) + ' kg'])
+    // 2
+    .join('tspan')
+    .attr('x', 0)
+    .style('font-family', 'sans-serif')
+    .style('font-size', 12)
+    .style('font-weight', (d, i) => (i ? undefined : 'bold'))
+    .style('fill', '#222')
+    //3
+    .attr('dy', (d, i) => (i ? '1.2em' : 0))
+    .text((d) => d);
+
+  return svg;
+}
+day6();
+
+async function day7() {
+  const allData = await d3
+    .csv('data/big-mac-raw-index@1.csv')
+    .map(({ date, name, dollar_price, iso_a3 }) => ({
+      name,
+      iso: iso_a3,
+      date: new Date(date),
+      price: dollar_price,
+    }));
+  const data = [
+    allData.filter(({ iso }) => iso === 'USA'),
+    allData.filter(({ iso }) => iso === 'SWE'),
+    allData.filter(({ iso }) => iso === 'CHN'),
+    allData.filter(({ iso }) => iso === 'EUZ'),
+  ];
+  const width = 900;
+  const height = 500;
+  const margin = {
+    top: 10,
+    right: 80,
+    bottom: 30,
+    left: 35,
+  };
+  const countryNames = data.map((d) => d[0].name);
+  const colors = d3.scaleOrdinal(countryNames, d3.schemeCategory10);
+  const startDate = data[0][0].date;
+  const endDate = data[0][data[0].length - 1].date;
+  const xScale = d3.scaleTime(
+    // domain
+    [startDate, endDate],
+    // range
+    [margin.left, width - margin.right]
+  );
+  const yMax = 8;
+  const yScale = d3.scaleLinear(
+    [1, yMax],
+    [height - margin.bottom, margin.top]
+  );
+  const formatter = d3.format('$.2f');
+  const yAxis = d3.axisLeft(yScale).tickFormat((d) => formatter(d));
+  const xAxis = d3.axisBottom(xScale);
+  const line = d3
+    .line()
+    .x((d) => xScale(d.date))
+    .y((d) => yScale(d.price))
+    .curve(d3.curveNatural);
+  const svg = d3
+    .select('#day7')
+    .selectAll('path')
+    .data(data)
+    .join('path')
+    .attr('class', 'big-mac-line')
+    // Using our line generator here
+    .attr('d', line)
+    // Every data point in the array has a name key
+    // so we just grab the one from d[0]
+    .style('stroke', (d) => colors(d[0].name))
+    .style('stroke-width', 2)
+    .style('fill', 'transparent');
+
+  // This places the labels to the right of each line
+  d3.select(svg)
+    .selectAll('text.label')
+    .data(data)
+    .join('text')
+    .attr('class', 'label')
+    // place the ticks to the right of the chart
+    .attr('x', width - margin.right + 5)
+    // Place the ticks at the same y position as
+    // the last y value of the line (remember, d is our array of points)
+    .attr(
+      'y',
+      (d) => yScale(d[d.length - 1].price) + (d[0].name === 'Sweden' ? -10 : 0)
+    )
+    .attr('dy', '0.35em')
+    .style('fill', (d) => colors(d[0].name))
+    .style('font-family', 'sans-serif')
+    .style('font-size', 12)
+    .text((d) => d[0].name);
+
+  d3.select(svg)
+    .append('g')
+    .attr('class', 'x-axis')
+    .attr('transform', `translate(0,${height - margin.bottom})`)
+    .call(xAxis);
+
+  d3.select(svg)
+    .append('g')
+    .attr('class', 'y-axis')
+    .attr('transform', `translate(${margin.left},0)`)
+    .call(yAxis)
+    // This removes the vertical line on the axis between the ticks and the rest of the chart.
+    // Purely an aesthetic choice
+    .selectAll('.domain')
+    .remove();
+
+  return svg;
+}
+day7();
+//note still troubleshooting day 7 and hoping to move on through all 25 days!
